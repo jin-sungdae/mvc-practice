@@ -1,2 +1,2 @@
-„03:13:54.318 [Test worker] INFO org.reflections.Reflections - Reflections took 59 ms to scan 2 urls, producing 6 keys and 13 values
-Ó03:13:54.336 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController, class org.example.controller.HealthCheckController, class org.example.controller.HomeService]]
+U03:17:47.847 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
+É03:17:47.849 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]

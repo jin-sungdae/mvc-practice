@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:13:54" hostname="sungdaeui-MacBookPro.local" time="0.11">
+<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:17:47" hostname="sungdaeui-MacBookPro.local" time="0.025">
   <properties/>
-  <testcase name="controllerScan()" classname="org.example.ReflectionTest" time="0.11"/>
-  <system-out><![CDATA[03:13:54.318 [Test worker] INFO org.reflections.Reflections - Reflections took 59 ms to scan 2 urls, producing 6 keys and 13 values
-03:13:54.336 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController, class org.example.controller.HealthCheckController, class org.example.controller.HomeService]]
+  <testcase name="showClass()" classname="org.example.ReflectionTest" time="0.025"/>
+  <system-out><![CDATA[03:17:47.847 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
+03:17:47.849 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
