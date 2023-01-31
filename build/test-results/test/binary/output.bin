@@ -1,2 +1,2 @@
-ƒ08:02:19.840 [Test worker] INFO org.reflections.Reflections - Reflections took 48 ms to scan 2 urls, producing 5 keys and 8 values
-u08:02:19.856 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController]]
+„03:13:54.318 [Test worker] INFO org.reflections.Reflections - Reflections took 59 ms to scan 2 urls, producing 6 keys and 13 values
+Ó03:13:54.336 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController, class org.example.controller.HealthCheckController, class org.example.controller.HomeService]]
