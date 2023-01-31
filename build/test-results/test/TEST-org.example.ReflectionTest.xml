@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:19:05" hostname="sungdaeui-MacBookPro.local" time="0.02">
+<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:20:16" hostname="sungdaeui-MacBookPro.local" time="0.018">
   <properties/>
-  <testcase name="showClass()" classname="org.example.ReflectionTest" time="0.02"/>
-  <system-out><![CDATA[03:19:05.652 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
-03:19:05.654 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
-03:19:05.656 [Test worker] DEBUG org.example.ReflectionTest - User all declared constructors: [[public org.example.model.User(java.lang.String,java.lang.String)]}
+  <testcase name="showClass()" classname="org.example.ReflectionTest" time="0.018"/>
+  <system-out><![CDATA[03:20:16.216 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
+03:20:16.220 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
+03:20:16.222 [Test worker] DEBUG org.example.ReflectionTest - User all declared constructors: [[public org.example.model.User(java.lang.String,java.lang.String)]}
+03:20:16.222 [Test worker] DEBUG org.example.ReflectionTest - User all declared method: [[public boolean org.example.model.User.equalsUser(org.example.model.User), public boolean org.example.model.User.equals(java.lang.Object), public int org.example.model.User.hashCode()]}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

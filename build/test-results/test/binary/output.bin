@@ -1,3 +1,4 @@
-U03:19:05.652 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
-É03:19:05.654 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
-£03:19:05.656 [Test worker] DEBUG org.example.ReflectionTest - User all declared constructors: [[public org.example.model.User(java.lang.String,java.lang.String)]}
+U03:20:16.216 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
+É03:20:16.220 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
+£03:20:16.222 [Test worker] DEBUG org.example.ReflectionTest - User all declared constructors: [[public org.example.model.User(java.lang.String,java.lang.String)]}
+“03:20:16.222 [Test worker] DEBUG org.example.ReflectionTest - User all declared method: [[public boolean org.example.model.User.equalsUser(org.example.model.User), public boolean org.example.model.User.equals(java.lang.Object), public int org.example.model.User.hashCode()]}

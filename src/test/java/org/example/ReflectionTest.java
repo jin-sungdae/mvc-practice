@@ -37,6 +37,7 @@ public class ReflectionTest {
 
         logger.debug("User all declared fields: [{}]", Arrays.stream(clazz.getDeclaredFields()).collect(Collectors.toList()));
         logger.debug("User all declared constructors: [{}}", Arrays.stream(clazz.getDeclaredConstructors()).collect(Collectors.toList()));
+        logger.debug("User all declared method: [{}}", Arrays.stream(clazz.getDeclaredMethods()).collect(Collectors.toList()));
     }
 
     private Set<Class<?>> getTypesAnnotatedWith(List<Class<? extends Annotation>> annotations) {
