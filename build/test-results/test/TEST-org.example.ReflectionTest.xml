@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-30T23:02:19" hostname="sungdaeui-MacBookPro.local" time="0.093">
+  <properties/>
+  <testcase name="controllerScan()" classname="org.example.ReflectionTest" time="0.093"/>
+  <system-out><![CDATA[08:02:19.840 [Test worker] INFO org.reflections.Reflections - Reflections took 48 ms to scan 2 urls, producing 5 keys and 8 values
+08:02:19.856 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController]]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

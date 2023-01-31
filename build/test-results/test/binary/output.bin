@@ -1,0 +1,2 @@
+ƒ08:02:19.840 [Test worker] INFO org.reflections.Reflections - Reflections took 48 ms to scan 2 urls, producing 5 keys and 8 values
+u08:02:19.856 [Test worker] DEBUG org.example.ReflectionTest - beans: [[class org.example.controller.HomeController]]
