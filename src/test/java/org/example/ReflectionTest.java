@@ -40,6 +40,19 @@ public class ReflectionTest {
         logger.debug("User all declared method: [{}}", Arrays.stream(clazz.getDeclaredMethods()).collect(Collectors.toList()));
     }
 
+    @Test
+    void load() {
+        // 1
+        Class<User> clazz = User.class;
+
+        // 2
+        User user = new User("serverwizard", "진성대");
+        Class<? extends User> clazz2 = user.getClass();
+
+        // 3
+        Class<?> clazz3 = Class.forName("org.example.User");
+    }
+
     private Set<Class<?>> getTypesAnnotatedWith(List<Class<? extends Annotation>> annotations) {
         Reflections reflections = new Reflections("org.example");
 
