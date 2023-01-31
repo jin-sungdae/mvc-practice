@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:17:47" hostname="sungdaeui-MacBookPro.local" time="0.025">
+<testsuite name="org.example.ReflectionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-31T18:19:05" hostname="sungdaeui-MacBookPro.local" time="0.02">
   <properties/>
-  <testcase name="showClass()" classname="org.example.ReflectionTest" time="0.025"/>
-  <system-out><![CDATA[03:17:47.847 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
-03:17:47.849 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
+  <testcase name="showClass()" classname="org.example.ReflectionTest" time="0.02"/>
+  <system-out><![CDATA[03:19:05.652 [Test worker] DEBUG org.example.ReflectionTest - org.example.model.User
+03:19:05.654 [Test worker] DEBUG org.example.ReflectionTest - User all declared fields: [[private java.lang.String org.example.model.User.userId, private java.lang.String org.example.model.User.name]]
+03:19:05.656 [Test worker] DEBUG org.example.ReflectionTest - User all declared constructors: [[public org.example.model.User(java.lang.String,java.lang.String)]}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
