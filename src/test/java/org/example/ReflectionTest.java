@@ -41,7 +41,7 @@ public class ReflectionTest {
     }
 
     @Test
-    void load() {
+    void load() throws ClassNotFoundException {
         // 1
         Class<User> clazz = User.class;
 
@@ -50,7 +50,9 @@ public class ReflectionTest {
         Class<? extends User> clazz2 = user.getClass();
 
         // 3
-        Class<?> clazz3 = Class.forName("org.example.User");
+        Class<?> clazz3 = Class.forName("org.example.model.User");
+
+        logger.debug("clazz: [{}]", clazz);
     }
 
     private Set<Class<?>> getTypesAnnotatedWith(List<Class<? extends Annotation>> annotations) {
