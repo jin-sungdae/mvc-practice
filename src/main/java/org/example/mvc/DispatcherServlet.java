@@ -33,8 +33,6 @@ public class DispatcherServlet extends HttpServlet {
             Controller handler = rmhm.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()), request.getRequestURI()));
             String viewName = handler.handleRequest(request, response);
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher(viewName);
-            requestDispatcher.forward(request, response);
         } catch (Exception e) {
             log.error("execption occurred: [{}]", e.getMessage(), e);
             throw new ServletException(e);
