@@ -2,6 +2,7 @@ package org.example.repository;
 
 import org.example.model.User;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,5 +11,9 @@ public class UserRepository {
 
     public static void save(User user) {
         users.put(user.getUserId(), user);
+    }
+
+    public static Collection<User> findAll() {
+        return users.values();
     }
 }
