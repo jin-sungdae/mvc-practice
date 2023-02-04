@@ -9,10 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.annotation.Retention;
 
 @Controller
-public class HomeController {
+public class HomeController implements org.example.controller.Controller {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(HttpServletRequest request, HttpServletResponse response) {
         return "home";
+    }
+
+    @Override
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return "home.jsp";
     }
 }
