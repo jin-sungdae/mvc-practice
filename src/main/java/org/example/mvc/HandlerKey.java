@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.mvc;
 
 import org.example.annotation.RequestMethod;
 
