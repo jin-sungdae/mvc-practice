@@ -1,7 +1,6 @@
 package org.example.mvc;
 
 import org.example.annotation.RequestMethod;
-import org.example.controller.Controller;
 import org.example.view.JspViewResolver;
 import org.example.view.ModelAndView;
 import org.example.view.View;
@@ -16,14 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 @WebServlet("/")
 public class DispatcherServlet extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(DispatcherServlet.class);
 
-    private HandlerMapping hm;
+    private List<HandlerMapping> handlerMappings;
 
     private List<ViewResolver> viewResolvers;
 
@@ -33,8 +31,10 @@ public class DispatcherServlet extends HttpServlet {
     public void init() throws ServletException {
         RequestMappingHandlerMapping rmhm = new RequestMappingHandlerMapping();
         rmhm.init();
-        hm = rmhm;
 
+        AnnotationHandlerMapping ahm = new AnnotationHandlerMapping();
+
+        handlerMappings = List.of(rmhm, ahm);
         handlerAdaptors = List.of(new SimpleControllerHandlerAdapter());
         viewResolvers = Collections.singletonList(new JspViewResolver());
     }
@@ -43,7 +43,7 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("[DispatcherServlet] service started");
         try {
-            Object handler = hm.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()), request.getRequestURI()));
+            Object handler = handlerMappings.findHandler(new HandlerKey(RequestMethod.valueOf(request.getMethod()), request.getRequestURI()));
 
             HandlerAdaptor handlerAdaptor = handlerAdaptors.stream()
                     .filter(ha -> ha.supports(handler))
