@@ -9,12 +9,12 @@ public class UserController {
 
     private final UserService userService;
 
+    @Inject
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
-    @Inject
-    private UserService getUserService() {
+    public UserService getUserService() {
         return userService;
     }
 }
