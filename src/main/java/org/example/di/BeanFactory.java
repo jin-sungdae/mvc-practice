@@ -49,12 +49,12 @@ public class BeanFactory {
     }
 
     private Constructor<?> findConstructor(Class<?> clazz) {
-        Set<Constructor> injectedConstructors = ReflectionUtils.getAllConstructors(clazz, ReflectionUtils.withAnnotation(Inject.class));
-        if (injectedConstructors.isEmpty()) {
-            return null;
-        }
-        return injectedConstructors.iterator().next();
+        Constructor<?> constructor = BeanFactoryUtils.getInjectedConstructor(clazz);
+        if (Objects.nonNull(constructor))
+            return constructor;
+        return clazz.getConstructors()[0];
     }
+
 
     public <T> T getBean(Class<T> requiredType) {
         return (T) beans.get(requiredType);
