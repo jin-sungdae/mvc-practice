@@ -1,9 +1,14 @@
 package org.example.di;
 
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import javassist.tools.reflect.Reflection;
+import org.example.annotation.Inject;
+import org.reflections.ReflectionUtils;
+import org.reflections.Reflections;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.*;
 
 public class BeanFactory {
 
@@ -12,6 +17,43 @@ public class BeanFactory {
 
     public BeanFactory(Set<Class<?>> preInstantiatedClazz) {
         this.preInstantiatedClazz = preInstantiatedClazz;
+        initialize();
+    }
+
+    private void initialize() {
+        for (Class<?> clazz : preInstantiatedClazz) {
+            Object instance = createInstance(clazz);
+            beans.put(clazz, instance);
+        }
+    }
+
+    private Object createInstance(Class<?> clazz) {
+        //생성자
+        Constructor<?> constructor = findConstructor(clazz);
+
+        // 파라미터
+        List<Object> parameters = new ArrayList<>();
+        for (Class<?> typeClass : constructor.getParameterTypes()) {
+            parameters.add(getParameterByClass(typeClass));
+        }
+        // 인스턴스 생성
+        try {
+            return constructor.newInstance(parameters.toArray());
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e)  {
+            e.printStackTrace();
+        }
+    }
+
+    private Object getParameterByClass(Class<?> typeClass) {
+
+    }
+
+    private Constructor<?> findConstructor(Class<?> clazz) {
+        Set<Constructor> injectedConstructors = ReflectionUtils.getAllConstructors(clazz, ReflectionUtils.withAnnotation(Inject.class));
+        if (injectedConstructors.isEmpty()) {
+            return null;
+        }
+        return injectedConstructors.iterator().next();
     }
 
     public <T> T getBean(Class<T> requiredType) {
