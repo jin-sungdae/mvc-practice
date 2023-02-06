@@ -27,6 +27,8 @@ public class BeanFactory {
         }
     }
 
+    // UserController
+    // UserService
     private Object createInstance(Class<?> clazz) {
         //생성자
         Constructor<?> constructor = findConstructor(clazz);
@@ -34,18 +36,23 @@ public class BeanFactory {
         // 파라미터
         List<Object> parameters = new ArrayList<>();
         for (Class<?> typeClass : constructor.getParameterTypes()) {
+            // UserService
             parameters.add(getParameterByClass(typeClass));
         }
         // 인스턴스 생성
         try {
             return constructor.newInstance(parameters.toArray());
         } catch (InstantiationException | IllegalAccessException | InvocationTargetException e)  {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     private Object getParameterByClass(Class<?> typeClass) {
+        Object instanceBean = getBean(typeClass);
 
+        if (Objects.nonNull(instanceBean))
+            return instanceBean;
+        return createInstance(typeClass);
     }
 
     private Constructor<?> findConstructor(Class<?> clazz) {
